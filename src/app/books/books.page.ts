@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/models/book';
 import { BookService } from '../shared/services/book.service';
+import { NavController } from '@ionic/angular';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @Component({
   selector: 'app-books',
@@ -11,7 +13,8 @@ export class BooksPage implements OnInit {
 
   books: Book[];
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService,
+    public navCtrl: NavController) { }
 
   ngOnInit() {
     this.bookService.getBooks()
@@ -20,4 +23,7 @@ export class BooksPage implements OnInit {
     })
   }
 
+  goToCreate() {
+    this.navCtrl.navigateForward('/books/create');
+  }
 }

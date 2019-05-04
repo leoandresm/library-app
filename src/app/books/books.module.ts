@@ -6,12 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BooksPage } from './books.page';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BooksPage
+  }, {
+    path: 'create',
+    component: BookDetailComponent
   }
+
 ];
 
 @NgModule({
@@ -21,6 +26,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [BooksPage]
+  declarations: [BooksPage, BookDetailComponent]
 })
 export class BooksPageModule {}

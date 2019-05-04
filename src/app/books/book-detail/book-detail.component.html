@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form (ngSubmit)="saveBook()">
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" [(ngModel)]="book.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Genre</ion-label>
+      <ion-input type="text" [(ngModel)]="book.genre" name="genre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Author</ion-label>
+      <ion-input type="text" [(ngModel)]="book.author" name="author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox slot="start" type="text" [(ngModel)]="book.read" name="read"></ion-checkbox>
+      <ion-label>Read</ion-label>
+    </ion-item>
+    <ion-button type="submit" color="primary">Submit</ion-button>
+    <ion-button type="button" color="secondary" (click)="goBack()">Cancel</ion-button>
+  </form>
+</ion-content>
